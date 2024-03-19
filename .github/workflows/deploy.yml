@@ -2,7 +2,7 @@ name: Deploy to AWS EC2
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 env:
   AWS_REGION: us-west-1
@@ -50,7 +50,7 @@ jobs:
     - name: Zip and Upload to AWS S3
       run: |
         zip -r deploy.zip ./.env ./package.json ./dist ./scripts appspec.yml
-        aws s3 cp deploy.zip s3://${{ env.S3_BUCKET_NAME }}/${{ github.sha }}.zip
+        aws s3 cp deploy.zip s3://$S3_BUCKET_NAME/$GITHUB_SHA.zip
 
     - name: Deploy to AWS EC2 from S3
       run: |
@@ -58,4 +58,4 @@ jobs:
           --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
           --deployment-config-name CodeDeployDefault.AllAtOnce \
           --deployment-group-name ${{ env.CODE_DEPLOY_DEPLOYMENT_GROUP_NAME }} \
-          --s3-location bucket=${{ env.S3_BUCKET_NAME }},bundleType=zip,key=${{ github.sha }}.zip
+          --s3-location bucket=$S3_BUCKET_NAME,bundleType=zip,key=$GITHUB_SHA.zip \

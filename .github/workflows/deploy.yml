@@ -47,15 +47,18 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ env.AWS_REGION }}
 
-    - name: Zip and Upload to AWS S3
-      run: |
-        zip -r deploy.zip ./.env ./package.json ./dist ./scripts appspec.yml
-        aws s3 cp deploy.zip s3://${{ env.S3_BUCKET_NAME }}/app.zip
+   - name: Zip and Upload to AWS S3
+    run: |
+        aws deploy push \
+          --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
+          --ignore-hidden-files \
+          --s3-location s3://${{ env.S3_BUCKET_NAME }}/${{ GITHUB_SHA }}.zip \
+          --source .
 
-    - name: Deploy to AWS EC2 from S3
+   - name: Deploy to AWS EC2 from S3
       run: |
         aws deploy create-deployment \
           --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
           --deployment-config-name CodeDeployDefault.AllAtOnce \
           --deployment-group-name ${{ env.CODE_DEPLOY_DEPLOYMENT_GROUP_NAME }} \
-          --s3-location bucket=${{ env.S3_BUCKET_NAME }},bundleType=zip,key=app.zip \
+          --s3-location bucket=${{ env.S3_BUCKET_NAME }} ,key=${{ GITHUB_SHA }} .zip,bundleType=zip

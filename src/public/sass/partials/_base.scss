@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+html,
+body {
+  margin: 0 auto;
+  max-width: 1440px;
+  height: 100%;
+  font-size: 18px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+main {
+  padding: 0 5rem;
+}
+ul {
+  list-style: none;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  .menu_component {
+    width: 25%;
+    position: relative;
+    text-align: center;
+    img {
+      width: 100%;
+    }
+    p {
+      visibility: hidden;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -150%);
+      font-size: 1.4rem;
+    }
+  }
+  .menu_component:hover {
+    cursor: pointer;
+    img {
+      opacity: 0.3;
+    }
+    p {
+      visibility: visible;
+      color: black;
+    }
+  }
+}
+
+.introduce {
+  display: flex;
+  justify-content: space-around;
+
+  &_detail {
+    width: 60%;
+    font-size: 1rem;
+    font-weight: lighter;
+    text-align: center;
+    line-height: 200%;
+    padding-top: 100px;
+    p {
+      font-size: 30px;
+      font-weight: normal;
+    }
+  }
+  &_image {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    img {
+      width: 400px;
+    }
+  }
+}
+
+.contact {
+  display: flex;
+  gap: 2rem;
+
+  .contactinfo {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 150%;
+    padding-top: 3rem;
+    p {
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+  }
+  .form {
+    width: 40%;
+    font-size: 1.1rem;
+    padding-top: 1rem;
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+      width: 100%;
+      box-sizing: border-box;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      background-color: #f8f8f8;
+      padding: 12px 20px;
+    }
+
+    input[name="comment"] {
+      width: 100%;
+      height: 300px;
+      resize: none;
+    }
+
+    input[type="text"]:focus {
+      outline: none !important;
+      background-color: #e1e0e0;
+      border: 2px solid gray;
+    }
+
+    input[type="submit"],
+    input[type="reset"] {
+      background-color: #c4d3ea;
+      border-radius: 5px;
+      border: none;
+      color: white;
+      padding: 0.5rem 2rem;
+      font-size: 1rem;
+    }
+    input[type="submit"]:hover,
+    input[type="reset"]:hover {
+      background-color: #95b7ed;
+      cursor: pointer;
+    }
+  }
+}

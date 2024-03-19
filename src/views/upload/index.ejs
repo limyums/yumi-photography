@@ -1,0 +1,8 @@
+<h2>Image Upload</h2>
+<% if (msg) { %>
+<p><%= msg %></p>
+<% } %>
+<form action="/upload" method="POST" enctype="multipart/form-data">
+  <input type="file" name="file" id="" />
+  <button type="submit">Upload</button>
+</form>

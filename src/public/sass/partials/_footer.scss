@@ -1,0 +1,15 @@
+.footer {
+  height: 100px;
+  padding: 2rem 10rem 2rem 7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .footer_right {
+    display: flex;
+    align-items: center;
+    .logo {
+      width: 100px;
+      height: auto;
+    }
+  }
+}

@@ -6,7 +6,7 @@ on:
 
 env:
   AWS_REGION: us-west-1
-  S3_BUCKET_NAME: yumi-photo
+  S3_BUCKET_NAME: yumi-photo/deploy
   CODE_DEPLOY_APPLICATION_NAME: yumiphotography
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: yumi_photography_EC
 

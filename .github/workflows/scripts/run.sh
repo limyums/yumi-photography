@@ -5,7 +5,7 @@
 # sudo apt-get install -y nodejs
 
 # Add Node.js and npm to PATH
-export PATH="/home/ubuntu/.nvm/versions/node/v18.17.0/bin:$PATH"
+export PATH="/home/ubuntu/.nvm/versions/node/v20.11.1/bin:$PATH"
 
 # 권한 부여
 sudo chown -R $USER:$GROUP /home/ubuntu/action

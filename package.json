@@ -7,7 +7,7 @@
     "dev": "ts-node-dev --inspect -- src/index.ts",
     "compile:css": "sass -w src/public/sass:src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc -p ."
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",

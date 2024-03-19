@@ -6,7 +6,7 @@ on:
     branches: [ main ]
 
 env:
-  AWS_REGION: US West (N. California) us-west-1
+  AWS_REGION: us-west-1
   S3_BUCKET_NAME: yumi-photo
   CODE_DEPLOY_APPLICATION_NAME: Yumi-Photography
   CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: Yumi-Photography

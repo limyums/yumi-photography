@@ -17,7 +17,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [21.x]
+        node-version: [20.x]
 
     steps:
     - name: Checkout
@@ -50,7 +50,7 @@ jobs:
     - name: Zip and Upload to AWS S3
       run: |
         zip -r deploy.zip ./.env ./package.json ./dist ./scripts appspec.yml
-        aws s3 cp deploy.zip s3://$S3_BUCKET_NAME/$GITHUB_SHA.zip
+        aws s3 cp deploy.zip s3://${{ env.S3_BUCKET_NAME}}/$GITHUB_SHA.zip
 
     - name: Deploy to AWS EC2 from S3
       run: |

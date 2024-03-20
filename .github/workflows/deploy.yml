@@ -5,10 +5,10 @@ on:
     branches: [main]
 
 env:
-  AWS_REGION: us-west-1
-  S3_BUCKET_NAME: yumi-photo
-  CODE_DEPLOY_APPLICATION_NAME: yumiphotography
-  CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: yumiphoto
+  AWS_REGION: us-east-2
+  S3_BUCKET_NAME: yumiphoto
+  CODE_DEPLOY_APPLICATION_NAME: yumiphoto
+  CODE_DEPLOY_DEPLOYMENT_GROUP_NAME: yumiphoto-deploy
 
 jobs:
   build:
